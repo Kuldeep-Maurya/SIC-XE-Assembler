@@ -1,0 +1,16 @@
+----------------------------------------------------------------
+
+5	0000  		MAX		START		0
+10	0000  		FIRST		LDS		#3		6D0003
+15	0003  				LDT		#300		75012C
+20	0006  				LDX		#0		050000
+25	0009  		CLOOP		LDA		ALPHA,		032FF4
+30	000C  				COMP		MAX		2B2139
+35	000F  				JLT		NOCH		3B2003
+40	0012  				STA		MAX		0F2133
+45	0015  		NOCH		ADDR		S,		9040
+50	0017  				COMPR		X,		A010
+55	0019  				JLT		CLOOP		3B2FED
+60	001C  		ALPHA	RESW		100
+65	0148  		MAX	WORD		-32768
+70						END		FIRST
